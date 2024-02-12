@@ -23,8 +23,21 @@
   <FILE>LAB 2.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <Setup><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>23</LINE></Setup>
-  <IdelayT0><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>65</LINE></IdelayT0>
-  <loop><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>40</LINE></loop>
+  <TABLA7SEG><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>23</LINE></TABLA7SEG>
+  <Setup><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>27</LINE></Setup>
+  <loop><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>60</LINE></loop>
+  <PrimerBoton><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>81</LINE></PrimerBoton>
+  <Pres1><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>115</LINE></Pres1>
+  <SegundoBoton><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>86</LINE></SegundoBoton>
+  <Pres2><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>122</LINE></Pres2>
+  <Mostrarvalorinicial><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>90</LINE></Mostrarvalorinicial>
+  <IdelayT0><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>97</LINE></IdelayT0>
+  <delay><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>107</LINE></delay>
+  <delay1><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>110</LINE></delay1>
+  <incre><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>129</LINE></incre>
+  <decre><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>137</LINE></decre>
+  <OVERFLO><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>150</LINE></OVERFLO>
+  <LEDS1><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>145</LINE></LEDS1>
+  <OVERFLO2><FILE>C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm</FILE><LINE>155</LINE></OVERFLO2>
  </LABELS>
 </ASSEMBLER_INFO>

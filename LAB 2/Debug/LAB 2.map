@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm Wed Feb 07 17:08:42 2024
+AVRASM ver. 2.2.8  C:\Users\alane\Documents\Atmel Studio\7.0\LAB 2\LAB 2\main.asm Sun Feb 11 20:43:45 2024
 
 
 EQU  SIGNATURE_000 0000001e
@@ -695,6 +695,19 @@ EQU  ACIaddr      0000002e
 EQU  TWIaddr      00000030
 EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
-CSEG Setup        00000004
-CSEG IdelayT0     00000022
-CSEG loop         00000012
+CSEG TABLA7SEG    00000004
+CSEG Setup        0000000c
+CSEG loop         00000023
+CSEG PrimerBoton  00000023
+CSEG Pres1        00000037
+CSEG SegundoBoton 00000027
+CSEG Pres2        0000003e
+CSEG Mostrarvalorinicial 0000002b
+CSEG IdelayT0     0000002e
+CSEG delay        00000033
+CSEG delay1       00000034
+CSEG incre        00000045
+CSEG decre        0000004c
+CSEG OVERFLO      00000056
+CSEG LEDS1        00000053
+CSEG OVERFLO2     0000005b
