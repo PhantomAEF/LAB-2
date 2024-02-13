@@ -37,7 +37,7 @@ Setup:
 
 	LDI R17, 0
 
-	LDI R17, 0b0000_0000
+	LDI R17, 0b0010_0000
 	OUT DDRB, R17
 	LDI R17, 0b0000_0011
 	OUT PORTB, R17
@@ -61,23 +61,22 @@ Setup:
 Mostrarvalorinicial:
 	LPM R18, Z
 	OUT PORTD, R18
-	//*******************************************************
+//*******************************************************
+// LOOP
+//*******************************************************
 loop:
-//TIMER
-	IN R16, TIFR0
-	CPI R16, (1 << TOV0)
-	BREQ CHECK
 PrimerBoton: //Lectura del primer boton
     IN R16, PINB
 	SBRS R16, PB0
 	JMP Pres1
-//******************************************
 SegundoBoton: //Lectura del segundo boton
 	IN R16, PINB
 	SBRS R16, PB1
 	JMP Pres2
-
-	JMP loop
+Despues:
+	IN R16, TIFR0
+	SBRS R16, TOV0
+	BRNE LOOP
 //*****************************************************************************
 // Sub-rutinas
 //*****************************************************************************
@@ -94,18 +93,17 @@ CHECK:
 
 	INC R17
 	OUT PORTC, R17
+FINISH:
 	CPI R17, 16
-	BRNE loop
+	BRNE EQUAL
 	CLR R17 
-IdelayT0:
-	LDI R16, (1 << CS02) | (1 << CS00)
-	OUT TCCR0B, R16
-
-	LDI R16, 100
-	OUT TCNT0, R16
-
-	RET
-
+	Rjmp EQUAL
+EQUAL:
+	MOV R23, R19
+	INC R23
+	CP R17, R23
+	BREQ ENCENDIDO
+	JMP loop
 delay: //Funcion delay general
 	LDI R16, 100
 
@@ -131,21 +129,26 @@ Pres2:
 incre:
     INC R19 //Incrementa la cuenta de la primera fila de leds
     SBRC R19, 4 // Limitar el contador a 4 bits
-    CALL OVERFLO
+    rjmp OVERFLO
 	ADD ZL, R21
 	JMP LEDS1
 
 decre:
 	DEC R19 //Decrementa la cuenta de la primera fila de leds
     SBRC R19, 7 // Limitar el contador a no tener numeros negativos
-	CALL OVERFLO2
+	rjmp OVERFLO2
 	SUB ZL, R21
-	JMP LEDS1
+	JMP LEDS2
 
 LEDS1:
 	LPM R18, Z
 	OUT PORTD, R18
-	JMP loop
+	JMP SegundoBoton
+
+LEDS2:
+	LPM R18, Z
+	OUT PORTD, R18
+	JMP Despues
 
 OVERFLO:
 	CLR R19
@@ -156,4 +159,24 @@ OVERFLO2:
 	LDI R19, 15
 	LDI R22, 15
 	ADD ZL, R22
-	JMP LEDS1
+	JMP LEDS2
+
+IdelayT0:
+	LDI R16, (1 << CS02) | (1 << CS00)
+	OUT TCCR0B, R16
+
+	LDI R16, 100
+	OUT TCNT0, R16
+
+	RET
+ENCENDIDO: 
+	SBIC PORTB, PB5
+	JMP APAGADO
+	SBI PORTB, PB5
+	CLR R17
+	JMP loop
+
+APAGADO:
+	CBI PORTB, PB5
+	CLR R17
+	JMP loop
